@@ -16,11 +16,16 @@ use App\Http\Livewire\ContactUs;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/cart', CartComponent::class)->name('product.cart');
+Route::get('/cart', CartComponent::class)->name('product.cart');
+
+Route::controller(OrderController::class)->group(function () {
+    Route::get('/orders/{id}', 'show');
+    Route::post('/orders', 'store');
+});
 
 Route::get('/', Home::class);
 Route::get('/about-us', AboutUs::class);
