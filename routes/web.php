@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\AboutUs;
+use App\Http\Livewire\ContactUs;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,13 @@ use App\Http\Livewire\AboutUs;
 //     return view('welcome');
 // });
 
+// Route::get('/cart', CartComponent::class)->name('product.cart');
+
 Route::get('/', Home::class);
 Route::get('/about-us', AboutUs::class);
+Route::get('/contact-us', ContactUs::class);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

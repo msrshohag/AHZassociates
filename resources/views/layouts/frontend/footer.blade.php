@@ -78,5 +78,5 @@
             </div>
         </div>
     </div>
-    <a href="#" class="text-gray-500">Developed by - AHZ Associates</a>
+    <a href="#" class="text-gray-500 text-center">Developed by - AHZ Associates</a>
 </footer>
